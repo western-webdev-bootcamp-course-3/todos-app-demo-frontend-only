@@ -1,10 +1,17 @@
 import TodoListItem from './TodoListItem';
 
-const TodoList = () => {
+const TodoList = ({ todos, setTodos }) => {
   return (
     <ul className='todo-list'>
-      <TodoListItem text={'Learn React'} />
-      <TodoListItem text={'Learn TypeScript'} />
+      {todos.map((todo,index) => (
+        <TodoListItem
+          key={index}
+          index={index}
+          todo={todo}
+          todos={todos}
+          setTodos={setTodos}
+        />
+      ))}
     </ul>
   );
 };
