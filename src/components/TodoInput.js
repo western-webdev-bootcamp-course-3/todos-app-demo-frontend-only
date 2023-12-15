@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 const TodoInput = ({ todos, setTodos }) => {
   const [newTodo, setNewTodo] = useState('');
@@ -9,7 +10,7 @@ const TodoInput = ({ todos, setTodos }) => {
 
   const handleKeyPress = (event) => {
     if (event.key === 'Enter' && newTodo.trim() !== '') {
-      setTodos([...todos, newTodo]);
+      setTodos([...todos, {id: uuidv4(), item: newTodo, completed: false}]);
       setNewTodo('');
     }
   };

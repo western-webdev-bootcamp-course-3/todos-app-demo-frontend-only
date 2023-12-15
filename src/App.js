@@ -3,8 +3,11 @@ import Todos from './Todos';
 
 function App() {
   return (
-    <div className="main">
-      <h1>todos</h1>
+    <div className='main'>
+      <div className='test'>
+        <h1>todos</h1>
+      </div>
+
       <Todos />
     </div>
   );
